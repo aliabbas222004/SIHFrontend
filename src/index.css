@@ -90,3 +90,11 @@ code {
 .active{
   color: rgb(255, 68, 0) !important;
 }
+
+
+.desc{
+  font-family: "Slabo 27px", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 23px;
+}

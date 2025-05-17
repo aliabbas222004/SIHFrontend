@@ -11,7 +11,7 @@ const ItemInfo = (props) => {
                 <div className="col-12 col-md-auto text-center">
                     <ImageCarousel images={item.images} />
                 </div>
-                <div className="col-12 col-md-auto text-center">
+                <div className="col-12 col-md-auto text-center mt-3">
                     <h1>
                         {item.name}
                     </h1>
@@ -24,27 +24,32 @@ const ItemInfo = (props) => {
             >
                 <div className="col-md-6 text-center">
                     <h2><strong>Details</strong></h2> <br />
-                    {item.description}
+                    {item.description.split('\n').map((line, index) => (
+                        <span key={index} className='desc'>
+                            {line}
+                            <br />
+                        </span>
+                    ))}
                 </div>
                 <div className="col-md-6 text-center">
                     <div className="table-responsive" style={{ maxWidth: '100%' }}>
-                        <table className="table table-striped mx-auto strip-row" style={{width:'80%'}}>
+                        <table className="table table-striped mx-auto strip-row" style={{ width: '80%' }}>
                             <tbody>
                                 <tr>
                                     <th className="p-3">Price</th>
-                                    <td className="p-3">{item.price}</td>
+                                    <td className="p-3">{item.price} ₹</td>
                                 </tr>
                                 <tr>
                                     <th className="p-3">Width</th>
                                     <td className="p-3">{item.dimensions.width}</td>
                                 </tr>
                                 <tr>
-                                    <th className="p-3">Height</th>
-                                    <td className="p-3">{item.dimensions.height}</td>
+                                    <th className="p-3">Length</th>
+                                    <td className="p-3">{item.dimensions.length}</td>
                                 </tr>
                                 <tr>
                                     <th className="p-3">Thickness</th>
-                                    <td className="p-3">{item.dimensions.thickness}</td>
+                                    <td className="p-3">{item.dimensions.height}</td>
                                 </tr>
                             </tbody>
                         </table>

@@ -12,13 +12,32 @@ const ImageCarousel = ({ images }) => {
 
     return (
         <div style={{ textAlign: 'center' }}>
-            <img
-                src={images[current]}
-                alt="item"
-                className="img-fluid"
-                style={{ width: '300px', borderRadius: '8px' }}
-            />
-            
+            <div
+                style={{
+                    width: '300px',
+                    maxWidth: '500px',
+                    aspectRatio: '4 / 3',
+                    margin: '0 auto',
+                    overflow: 'hidden',
+                    borderRadius: '8px',
+                    backgroundColor: '#f0f0f0',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+            >
+                <img
+                    key={images[current]} // <-- Important: force re-render
+                    src={images[current]}
+                    alt="item"
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'contain',
+                        display: 'block'
+                    }}
+                />
+            </div>
         </div>
     );
 };

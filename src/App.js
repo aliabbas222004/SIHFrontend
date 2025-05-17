@@ -10,6 +10,7 @@ import LogIn from './components/LogIn';
 import LogOut from './components/LogOut';
 import ChatWidget from './components/ChatWidget';
 import LoginRedirect from './components/LogInRedirect';
+import Filter from './components/Filter';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
               <Route path="/user/signUp" element={<SignUp />} />
               <Route path="/user/logOut" element={<LogOut />} />
               <Route path="/login/success" element={<LoginRedirect />} />
-
+              <Route path="/filter" element={<Filter/>}/>
             </Routes>
             <ChatWidget/>
           <Footer/>
